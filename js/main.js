@@ -1,3 +1,4 @@
+// this is on the branch
 
 // create an array of items that you might want to accomplish on any given day
 
@@ -36,6 +37,6 @@ for (let i = 0; i < array.length; i++) {
 
 // this is bad design, most apparently because you have to change code in at least three places anytime you want to add another time slot
 
+
 let i = Math.floor(Math.random() * array.length);
-let r = array[i];
-console.log(r);
+console.log(array[i]);
