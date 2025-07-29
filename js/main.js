@@ -37,6 +37,6 @@ for (let i = 0; i < array.length; i++) {
 
 // this is bad design, most apparently because you have to change code in at least three places anytime you want to add another time slot
 
-
+// code to randomly grab one element from the array at random and display it to the console
 let i = Math.floor(Math.random() * array.length);
 console.log(array[i]);
