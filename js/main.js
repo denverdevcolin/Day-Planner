@@ -27,22 +27,15 @@ let timeArray = [timeSlot1, timeSlot2, timeSlot3, timeSlot4, timeSlot5, timeSlot
 
 // loop through array of items, while looping through the array of time slots I think
 
-// for (let i = 0; i < array.length; i++) {
-//     for (let k = 0; i < timeArray.length; i++) {
-//         timeArray[i].innerHTML += array[i];
-//     }
-// }
+for (let i = 0; i < array.length; i++) {
+    for (let k = 0; i < timeArray.length; i++) {
+        timeArray[i].innerHTML += array[i];
+    }
+}
 // that worked, but it doesn't look right because k is an unused variable
 
 // this is bad design, most apparently because you have to change code in at least three places anytime you want to add another time slot
 
-// let i = Math.floor(Math.random() * array.length);
-// let r = array[i];
-// console.log(r);
-
-for (let i = Math.floor(Math.random() * array.length); i < array.length; i++) {
-    for (let k = 0; i < timeArray.length; i++) {
-        timeArray[i].innerHTML += array[i];
-        console.log(i)
-    }
-}
+let i = Math.floor(Math.random() * array.length);
+let r = array[i];
+console.log(r);
