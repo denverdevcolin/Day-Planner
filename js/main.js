@@ -10,12 +10,9 @@ const list = document.getElementById("list");
 
 // create one new list item for each element in the array
 for (let i = 0; i < array.length; i++) {
-    list.innerHTML += `<li>${array[Math.floor(Math.random() * array.length)]}</li>`;
+    list.innerHTML += `<li>${array[i]}</li>`;
 
     // unordered list ends up receiving duplicates. how do we keep them out?
     // 
-    if () {
-
-    }
 }
 
