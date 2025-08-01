@@ -5,14 +5,15 @@ const btnEl = document.querySelector('button');
 const inputEl = document.querySelector('input');
 const listEl = document.getElementById('list');
 // create an array and add each value with push?
-let array = [];
+// let array = [];
 
 btnEl.addEventListener('click', () => {
     // const inputValue = inputEl.value;
-    const inputValue = inputEl.value;
-    array.push(inputValue);
-    for (let i = 0; i < array.length; i++) {
-        listEl.insertAdjacentHTML('beforeend', `<li>${inputValue}</li>`);
+    // const inputValue = inputEl.value.split(",");
+    let inputValue = inputEl.value.split(",");
+    
+    for (let i = 0; i < inputValue.length; i++) {
+        listEl.insertAdjacentHTML('beforeend', `<li>${inputValue[i]}</li>`);
     }
     
 });
