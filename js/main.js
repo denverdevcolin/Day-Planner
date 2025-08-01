@@ -3,14 +3,13 @@
 
 const btnEl = document.querySelector('button');
 const inputEl = document.querySelector('input');
-const listEl = document.getElementById("list");
+const listEl = document.getElementById('list');
 // create an array and add each value with push?
 let array = [];
 
 btnEl.addEventListener('click', () => {
     // const inputValue = inputEl.value;
     const inputValue = inputEl.value;
-    inputValue.split(', ');
     array.push(inputValue);
     for (let i = 0; i < array.length; i++) {
         listEl.insertAdjacentHTML('beforeend', `<li>${inputValue}</li>`);
