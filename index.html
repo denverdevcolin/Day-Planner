@@ -3,23 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Day Planner</title>
 </head>
 <body>
     
-    <div>
-        <h1>Schedule Your Day</h1>
+    <div class="container">
+        <h1 class="text-center">Schedule Your Day</h1>
     </div>
-
-    <section>
-
+    <div class="simple-border text-center">
+        <p>Give me a list of things you want to accomplish today. Don't go into your day by accident!</p>
+    </div>
+    
+    <section class="container">
+        <p>
+            <label for="list"></label>
+            <input type="text" id="getList"/>
+            <button>Schedule My Day!</button>
+        </p>
     </section>
 
     <section>
-        <ul id="list">
-        <!-- appending html here via javascript -->
-        </ul>
+
+        <ol id="list">
+
+        </ol>
+
     </section>
 
     <script src="js/main.js"></script>
