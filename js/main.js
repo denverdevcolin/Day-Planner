@@ -9,11 +9,15 @@ btnEl.addEventListener('click', () => {
 
     let inputValue = inputEl.value.split(",");
 
-    for (let i = 0; i < inputValue.length; i++) {
-        listEl.insertAdjacentHTML('beforeend', `<li>${inputValue[i]}</li>`);
-    }
+    checkDupes(inputValue);
     
 });
+
+function checkDupes (arr) {
+    for (let i = 0; i < arr.length; i++) {
+        listEl.insertAdjacentHTML('beforeend', `<li>${arr[i]}</li>`);
+    }
+}
 
 // declare a variable assign it to a random number, specifically, a number between 0 and the length of the array, essentially giving you an index
 // let i = Math.floor(Math.random() * array.length);
