@@ -4,14 +4,11 @@
 const btnEl = document.querySelector('button');
 const inputEl = document.querySelector('input');
 const listEl = document.getElementById('list');
-// create an array and add each value with push?
-// let array = [];
 
 btnEl.addEventListener('click', () => {
-    // const inputValue = inputEl.value;
-    // const inputValue = inputEl.value.split(",");
+
     let inputValue = inputEl.value.split(",");
-    
+
     for (let i = 0; i < inputValue.length; i++) {
         listEl.insertAdjacentHTML('beforeend', `<li>${inputValue[i]}</li>`);
     }
@@ -30,6 +27,5 @@ btnEl.addEventListener('click', () => {
 //     list.innerHTML += `<li>${array[i]}</li>`;
 
     // unordered list ends up receiving duplicates. how do we keep them out?
-    // 
 
 
