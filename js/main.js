@@ -8,28 +8,19 @@ const listEl = document.getElementById('list');
 btnEl.addEventListener('click', () => {
 
     let inputValue = inputEl.value.split(",");
-
-    // checkDupes(inputValue);
    
     for (let i = 0; i < inputValue.length; i++) {
 
         if (inputValue[i] == listEl.innerText) {
-            throw new Error(`${inputValue[i]} is already in your task list!`)
+            throw new Error(`${inputValue[i]} is already in your task list!`);
         } else {
             listEl.insertAdjacentHTML('beforeend', `<li>${inputValue[i]}</li>`);
         }
+
     }
 
 });
 
-function checkDupes (listItems) {
-
-    // if the next inputValue contains an item already in the listItems?
-    
-    // if the listItems on the page already have something that's in inputValue?
-    
-
-}
 
 // declare a variable assign it to a random number, specifically, a number between 0 and the length of the array, essentially giving you an index
 // let i = Math.floor(Math.random() * array.length);
