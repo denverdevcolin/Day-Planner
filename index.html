@@ -8,29 +8,35 @@
 </head>
 <body>
     
-    <div class="container">
-        <h1 class="heading">Schedule Your Day</h1>
-    </div>
-    <div class="text-center">
-        <p>Give me a list of things you want to accomplish today. Don't go into your day by accident!</p>
-    </div>
-    
     <section class="container">
+        <div class="header__container">
+            <h1 class="heading">Daily Schedule Planner</h1>
+        </div>
 
-        <p class="form-group">
+        <div class="form-group">
+            <p>Enter your tasks (separated by commas):</p>
             <label for="listItems"></label>
-            <input id="getList" type="text" name="listItems"/>
-            <button>Schedule My Day!</button>
-        </p>
+            <input id="getList" type="text" name="listItems" placeholder="e.g. fold laundry, walk Cleo, workout"/>
+        </div>
 
+        <div class="buttons">
+            <button id="addTasks">Add Tasks to Schedule</button>
+            <button id="clearTasks" class="clear-btn">Clear All Tasks</button>
+        </div>
+        
     </section>
 
-    <section>
+    <section class="container">
+        
+        <div id="summary">
+            <strong>Current Schedule:</strong> 0 tasks | <strong>Next available time:</strong> 8:00 AM
+        </div>
 
-        <ol id="list">
+        <section>
+            <div id="list">
 
-        </ol>
-
+            </div>
+        </section>
     </section>
 
     <script src="js/main.js"></script>
