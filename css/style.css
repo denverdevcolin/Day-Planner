@@ -19,7 +19,7 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	/* font: inherit; */
+	font-family: Arial, sans-serif;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -79,16 +79,17 @@ table {
     row-gap: 5px;
 }
 
-#getList {
+#input {
     padding: 12px;
     border: 2px solid #cfcfcf;
     border-radius: 5px;
-    background-color: #f1f0f0;
+    background-color: #e2e2e2;
 }
 
-#getList:focus {
+#input:focus {
     outline: none;
     border-color: #4CAF50;
+    background-color: #f6f6f6;
 }
 
 .buttons {
@@ -106,7 +107,7 @@ button {
     font-size: 1em;
 }
 
-button + button {
+.clear-btn {
     background-color: rgb(230, 66, 66);
 }
 
@@ -116,6 +117,13 @@ button:hover {
 
 .clear-btn:hover {
     background-color: #c82333;
+}
+
+.alert {
+    background-color: #bdc0ec;
+    margin: 10px 5px;
+    padding: 12px;
+    border-radius: 5px;
 }
 
 #summary {
@@ -129,11 +137,19 @@ button:hover {
     display: grid;
 }
 
+#taskList {
+    padding: 12px;
+    margin: 8px 5px;
+    border-left: 4px solid #0095f8;
+    border-radius: 5px;
+    background-color: #dbdbdb;
+}
+
 .task-item {
     background-color: (rgba(247, 247, 247, .9));
 }
 
 
-#list li {
+#list {
     text-transform: capitalize;
 }

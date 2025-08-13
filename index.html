@@ -16,13 +16,15 @@
         <div class="form-group">
             <p>Enter your tasks (separated by commas):</p>
             <label for="listItems"></label>
-            <input id="getList" type="text" name="listItems" placeholder="e.g. fold laundry, walk Cleo, workout"/>
+            <input id="input" type="text" name="listItems" placeholder="e.g. fold laundry, walk Cleo, workout"/>
         </div>
 
         <div class="buttons">
-            <button id="addTasks">Add Tasks to Schedule</button>
-            <button id="clearTasks" class="clear-btn">Clear All Tasks</button>
+            <button onclick="addTasks()">Add Tasks to Schedule</button>
+            <button class="clear-btn" onclick="clearAllTasks()">Clear All Tasks</button>
         </div>
+
+        <div class="alert" id="alertMessage"></div>
         
     </section>
 
@@ -32,11 +34,10 @@
             <strong>Current Schedule:</strong> 0 tasks | <strong>Next available time:</strong> 8:00 AM
         </div>
 
-        <section>
-            <div id="list">
+        <div id="taskList">
 
-            </div>
-        </section>
+        </div>
+       
     </section>
 
     <script src="js/main.js"></script>

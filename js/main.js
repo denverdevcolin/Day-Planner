@@ -1,70 +1,103 @@
 
-// const btnEl = document.querySelector('button');
-const addBtn = document.getElementById('addTasks');
-const clearBtn = document.getElementById('clearTasks');
-
-const inputEl = document.querySelector('input');
-const listEl = document.getElementById('list');
-
-const summary = document.getElementById('summary');
-
 let currentHour = 8;
 let allItems = new Set();
 
-clearBtn.addEventListener('click', () => {
-    
-    clearAllTasks();
-});
+// when button is clicked or enter pressed, check if input was given
+// if no input, show alert message (display nicely in html)
+// else,
+// convert input string to array
+// display each item in a new time slot (need place to put it in html)
+// display timeout success message (display same place as alert)
+// update summary
+// clear input
 
-addBtn.addEventListener('click', () => {
+const input = document.getElementById('input');
+let inputValue = input.value.split(",");
+let alertMessage = document.getElementById('alertMessage');
+// alertMessage.textContent = 
 
-    let inputValue = inputEl.value.split(",");
+const summary = document.getElementById('summary');
+const taskList = document.getElementById('taskList');
+
+function addTasks () {
+    // taskList.textContent = `your mother`;
+    taskList.textContent = `${input.value}`;
+}
+
+input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        addTasks();
+    }
+})
+
+
+
+
+
+
+
+
+
+
+// function addTasks () {
+
+//     const inputEl = document.querySelector('input');
+//     let inputValue = inputEl.value.trim().split(",");
    
-    // for (let i = 0; i < inputValue.length; i++) {
-    //     let time = `${currentHour}:00`;
-    //     currentHour++;
-        
-    //     listEl.insertAdjacentHTML(
-    //         'beforeend',
-    //         `<li>${time} -${inputValue[i]}</li>`
-    //     );
-    // }
+//     // if no input, show alert message
+//     if (!inputValue) {
+//         showAlert("Enter your tasks!");
+//         return;
+//     }
 
-    handleNewSubmission(inputValue);
+//     handleNewSubmission(inputValue);
 
-    const taskCount = allItems.size;
-    const nextTime = formatTime(currentHour);
-    summary.innerHTML = `<strong>Current Schedule:</strong>${taskCount} | <strong>Next available time:</strong> ${nextTime}`;
+//     inputEl.value = '';
+// }
 
-    inputEl.value = '';
-    
-});
 
-function handleNewSubmission (userInput) {
 
-    const newItems = userInput.filter(item => !allItems.has(item));
+// function handleNewSubmission (userInput) {
 
-    if (newItems.length === 0) {
-        alert("No new items to add!");
-        return;
-    }
+//     const newItems = userInput.filter(item => !allItems.has(item));
 
-    for (let i = 0; i < newItems.length; i++) {
-        allItems.add(newItems[i]);
-        const scheduleItem = document.createElement('div');
-        scheduleItem.textContent = `${currentHour}:00 - ${newItems[i]}`;
-        listEl.appendChild(scheduleItem);
-        currentHour++;
-    }
+//     if (newItems.length === 0) {
+//         alert("No new items to add!");
+//         return;
+//     }
 
-}
+//     for (let i = 0; i < newItems.length; i++) {
+//         allItems.add(newItems[i]);
+//         const scheduleItem = document.createElement('div');
+//         scheduleItem.textContent = `${currentHour}:00 - ${newItems[i]}`;
+//         listEl.appendChild(scheduleItem);
+//         currentHour++;
+//     }
 
-function clearAllTasks () {
-    if (allItems.size === 0) {
-        alert("Task List is already clear!");
-        return;
-    }
-}
+// }
+
+// function showAlert (message, type) {
+//     const alert = document.getElementById('alertMessage');
+//     alert.textContent = message;
+//     alert.className = `alert alert-${type}`;
+//     alert.style.display = 'block';
+// }
+
+// function clearAllTasks () {
+//     if (allItems.size === 0) {
+//         alert("Task List is already clear!");
+//         return;
+//     }
+
+//     updateStats();
+//     listEl.innerHTML = '';
+// }
+
+// function updateStats () {
+//     const taskCount = allItems.size;
+//     const nextTime = formatTime(currentHour);
+//     summary.innerHTML = `<strong>Current Schedule:</strong>${taskCount} | <strong>Next available time:</strong> ${nextTime}`;
+// }
 
 
 
