@@ -3,26 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Day Planner</title>
 </head>
 <body>
     
-    <!--
-    program picks from a list/array of items at random and puts them at different times throughout the day
-    ['study', 'walk', 'read five pages', 'exercise/workout/yoga', 'breakfast/lunch/dinner', 'call a loved one', etc.]
-    8:00am - Walk
-    8:30am - Make Coffee
-    8:45am - Study
-    10:00am - Breakfast
-    etc.
-    
-    -->
+    <section class="container">
+        <div class="header__container">
+            <h1 class="heading">Daily Schedule Planner</h1>
+        </div>
 
-    <ul id="list">
-       <!-- appending html here via javascript -->
-    </ul>
+        <div class="form-group">
+            <p>Enter your tasks (separated by commas):</p>
+            <label for="listItems"></label>
+            <input id="input" type="text" name="listItems" placeholder="e.g. fold laundry, walk Cleo, workout"/>
+        </div>
 
+        <div class="buttons">
+            <button onclick="addTasks()">Add Tasks to Schedule</button>
+            <button class="clear-btn" onclick="clearAllTasks()">Clear All Tasks</button>
+        </div>
+
+        <div class="alert" id="alertMessage"></div>
+        
+    </section>
+
+    <section class="container">
+        
+        <div id="summary">
+            <strong>Current Schedule:</strong> 0 tasks | <strong>Next available time:</strong> 8:00 AM
+        </div>
+
+        <div id="taskList">
+
+        </div>
+       
+    </section>
 
     <script src="js/main.js"></script>
 </body>
