@@ -48,7 +48,8 @@ function handleNewSubmission (userInput) {
         const taskItem = document.createElement('div');
         taskItem.className = 'new-item';
 
-        taskItem.textContent = `${currentHour}:00 - ${item}`;
+        const timeString = formatTime(currentHour);
+        taskItem.textContent = `${timeString} - ${item}`;
         taskList.appendChild(taskItem);
         currentHour++;
     });
@@ -58,35 +59,30 @@ function updateSummary () {
 
     let summary = document.getElementById('summary');
     // count number of items in allItems
-    let taskCount = allItems.size
-    summary.innerHTML = `<strong>Current Schedule:</strong> ${taskCount} tasks | <strong>Next available time:</strong>`;
+    let taskCount = allItems.size;
+    let nextTime = formatTime(currentHour);
+    summary.innerHTML = `<strong>Current Schedule:</strong> ${taskCount} tasks | <strong>Next available time:</strong>${nextTime}`;
 }
 
+function formatTime (hour) {
+    if (hour === 0 || hour === 12) {
+        return hour === 0 ? "12:00 AM" : "12:00 PM";
+    } else if (hour < 12) {
+        return `${hour}:00 AM`;
+    } else {
+        return `${hour - 12}:00 PM`
+    }
+}
 
+function clearAllTasks () {
 
+    if (allItems.size === 0) {
+        showAlert("Task list already clear!")
+    }
+    
+    updateSummary();
+    taskList.innerHTML = '';
+    
+}
 
-
-
-// function updateStats () {
-//     const taskCount = allItems.size;
-//     const nextTime = formatTime(currentHour);
-//     summary.innerHTML = `<strong>Current Schedule:</strong>${taskCount} | <strong>Next available time:</strong> ${nextTime}`;
-// }
-
-
-
-
-
-
-
-
-// function clearAllTasks () {
-//     if (allItems.size === 0) {
-//         alert("Task List is already clear!");
-//         return;
-//     }
-
-//     updateStats();
-//     listEl.innerHTML = '';
-// }
 
