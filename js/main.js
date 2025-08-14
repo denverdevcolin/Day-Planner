@@ -16,6 +16,7 @@ function addTasks () {
     }
 
     handleNewSubmission(inputValue);
+    updateSummary();
 
     input.value = '';
 
@@ -53,11 +54,26 @@ function handleNewSubmission (userInput) {
     });
 }
 
+function updateSummary () {
+
+    let summary = document.getElementById('summary');
+    // count number of items in allItems
+    let taskCount = allItems.size
+    summary.innerHTML = `<strong>Current Schedule:</strong> ${taskCount} tasks | <strong>Next available time:</strong>`;
+}
+
+
+
+
+
+
 // function updateStats () {
 //     const taskCount = allItems.size;
 //     const nextTime = formatTime(currentHour);
 //     summary.innerHTML = `<strong>Current Schedule:</strong>${taskCount} | <strong>Next available time:</strong> ${nextTime}`;
 // }
+
+
 
 
 
